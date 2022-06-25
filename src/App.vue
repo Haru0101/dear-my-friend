@@ -5,7 +5,12 @@ const message = ref('The accounting department has recently informed me that you
 
 const to = ref('Simon');
 const from = ref('MarkBorthwick');
-const sentDate = ref('February 8, 8:59 A.M.');
+const today = new Date(Date.now());
+const monthsFullSpell = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const monthsIndex = today.getMonth();
+const month = monthsFullSpell[monthsIndex];
+const date = today.getDate();
+const sentDate = ref(`${month} ${date}`);
 const letterClosing = ref('Regards');
 const letterGreeting = ref('Dear');
 
