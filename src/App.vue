@@ -12,14 +12,16 @@ const letterGreeting = 'Dear';
 </script>
 
 <template>
-  <p>{{letterGreeting}} {{to}},</p>
+  <div>
+    <p>{{letterGreeting}} {{to}},</p>
 
-  <p>{{message}}
+    <p>{{message}}
 
-  {{letterClosing}},</p>
+    {{letterClosing}},</p>
 
-  <p>{{from}}</p>
-  <p>{{sentDate}}</p>
+    <p>{{from}}</p>
+    <p>{{sentDate}}</p>
+  </div>
 </template>
 
 <style>
