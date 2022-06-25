@@ -19,37 +19,37 @@ const letterGreeting = ref('Dear');
 <template>
   <div class="max-w-2xl mx-auto">
     <div class="mb-8 bg-white shadow-lg rounded px-8 pt-6 pb-8">
-      <p class="mb-4">{{letterGreeting}} {{to}},</p>
+      <p class="mb-6">{{letterGreeting}} {{to}},</p>
 
       <p class="mb-2">{{message}}</p>
-      <p class="mb-4">{{letterClosing}},</p>
+      <p class="mb-6">{{letterClosing}},</p>
 
       <p class="flex justify-between"><span>{{from}}</span><span>{{sentDate}}</span></p>
     </div>
     <div>
-      <div>
-        <label class="block" label for="to">宛先</label>
-        <input class="block border-solid border-1 border-sky-500" id="to" type="text" v-model="to">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" label for="to">宛先</label>
+        <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="to" type="text" v-model="to">
       </div>
-      <div>
-        <label class="block" for="from">送り主</label>
-        <input class="block" id="from" type="text" v-model="from">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="from">送り主</label>
+        <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="from" type="text" v-model="from">
       </div>
-      <div>
-        <label class="block" for="sent_date">送付時刻</label>
-        <input class="block" id="sent_date" type="text" v-model="sentDate">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="sent_date">送付時刻</label>
+        <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sent_date" type="text" v-model="sentDate">
       </div>
-      <div>
-        <label class="block" for="message">本文</label>
-        <textarea class="block" id="message" type="text" v-model="message"></textarea>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">本文</label>
+        <textarea rows="6" class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" type="text" v-model="message"></textarea>
       </div>
-      <div>
-        <label class="block" for="letter_greeting">頭語</label>
-        <input class="block" id="letter_greeting" type="text" v-model="letterGreeting">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="letter_greeting">頭語</label>
+        <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="letter_greeting" type="text" v-model="letterGreeting">
       </div>
-      <div>
-        <label class="block" for="letter_closing">結語</label>
-        <input class="block" id="letter_closing" type="text" v-model="letterClosing">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="letter_closing">結語</label>
+        <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="letter_closing" type="text" v-model="letterClosing">
       </div>
     </div>
   </div>
