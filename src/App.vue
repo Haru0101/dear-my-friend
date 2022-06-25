@@ -17,13 +17,13 @@ const letterGreeting = ref('Dear');
 </script>
 
 <template>
-  <div>
-    <p>{{letterGreeting}} {{to}},</p>
+  <div class="mb-8 max-w-2xl mx-auto">
+    <p class="mb-4">{{letterGreeting}} {{to}},</p>
 
-    <p>{{message}}</p>
-    <p>{{letterClosing}},</p>
+    <p class="mb-2">{{message}}</p>
+    <p class="mb-4">{{letterClosing}},</p>
 
-    <p><span>{{from}}{{sentDate}}</span></p>
+    <p class="flex justify-between"><span>{{from}}</span><span>{{sentDate}}</span></p>
   </div>
   <div>
     <div>
