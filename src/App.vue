@@ -1,12 +1,24 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+
+const message = 'The accounting department has recently informed me that your sales reports have consistently been submitted after the deadlines. Please respond to this email with reasons as to why you have failed to meet the deadlines.';
+
+const to = 'Simon';
+const from = 'MarkBorthwick';
+const sentDate = 'February 8, 8:59 A.M.';
+
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <p>Dear {{to}},</p>
+
+  <p>{{message}}
+
+  Regards,</p>
+
+  <p>{{from}}</p>
+  <p>{{sentDate}}</p>
 </template>
 
 <style>
