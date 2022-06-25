@@ -17,38 +17,40 @@ const letterGreeting = ref('Dear');
 </script>
 
 <template>
-  <div class="mb-8 max-w-2xl mx-auto">
-    <p class="mb-4">{{letterGreeting}} {{to}},</p>
+  <div class="max-w-2xl mx-auto">
+    <div class="mb-8">
+      <p class="mb-4">{{letterGreeting}} {{to}},</p>
 
-    <p class="mb-2">{{message}}</p>
-    <p class="mb-4">{{letterClosing}},</p>
+      <p class="mb-2">{{message}}</p>
+      <p class="mb-4">{{letterClosing}},</p>
 
-    <p class="flex justify-between"><span>{{from}}</span><span>{{sentDate}}</span></p>
-  </div>
-  <div>
-    <div>
-      <label label for="to">宛先</label>
-      <input id="to" type="text" v-model="to">
+      <p class="flex justify-between"><span>{{from}}</span><span>{{sentDate}}</span></p>
     </div>
     <div>
-      <label for="from">送り主</label>
-      <input id="from" type="text" v-model="from">
-    </div>
-    <div>
-      <label for="sent_date">送付時刻</label>
-      <input id="sent_date" type="text" v-model="sentDate">
-    </div>
-    <div>
-      <label for="message">本文</label>
-      <textarea id="message" type="text" v-model="message"></textarea>
-    </div>
-    <div>
-      <label for="letter_greeting">頭語</label>
-      <input id="letter_greeting" type="text" v-model="letterGreeting">
-    </div>
-    <div>
-      <label for="letter_closing">結語</label>
-      <input id="letter_closing" type="text" v-model="letterClosing">
+      <div>
+        <label class="block" label for="to">宛先</label>
+        <input class="block" id="to" type="text" v-model="to">
+      </div>
+      <div>
+        <label class="block" for="from">送り主</label>
+        <input class="block" id="from" type="text" v-model="from">
+      </div>
+      <div>
+        <label class="block" for="sent_date">送付時刻</label>
+        <input class="block" id="sent_date" type="text" v-model="sentDate">
+      </div>
+      <div>
+        <label class="block" for="message">本文</label>
+        <textarea class="block" id="message" type="text" v-model="message"></textarea>
+      </div>
+      <div>
+        <label class="block" for="letter_greeting">頭語</label>
+        <input class="block" id="letter_greeting" type="text" v-model="letterGreeting">
+      </div>
+      <div>
+        <label class="block" for="letter_closing">結語</label>
+        <input class="block" id="letter_closing" type="text" v-model="letterClosing">
+      </div>
     </div>
   </div>
 </template>
@@ -60,11 +62,5 @@ const letterGreeting = ref('Dear');
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
-}
-label {
-  display: block;
-}
-input {
-  display: block;
 }
 </style>
