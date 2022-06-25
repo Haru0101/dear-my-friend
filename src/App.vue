@@ -18,7 +18,7 @@ const letterGreeting = ref('Dear');
 
 <template>
   <div class="max-w-2xl mx-auto">
-    <div class="mb-8">
+    <div class="mb-8 bg-white shadow-lg rounded px-8 pt-6 pb-8">
       <p class="mb-4">{{letterGreeting}} {{to}},</p>
 
       <p class="mb-2">{{message}}</p>
@@ -29,7 +29,7 @@ const letterGreeting = ref('Dear');
     <div>
       <div>
         <label class="block" label for="to">宛先</label>
-        <input class="block" id="to" type="text" v-model="to">
+        <input class="block border-solid border-1 border-sky-500" id="to" type="text" v-model="to">
       </div>
       <div>
         <label class="block" for="from">送り主</label>
