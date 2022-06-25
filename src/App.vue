@@ -20,12 +20,10 @@ const letterGreeting = ref('Dear');
   <div>
     <p>{{letterGreeting}} {{to}},</p>
 
-    <p>{{message}}
+    <p>{{message}}</p>
+    <p>{{letterClosing}},</p>
 
-    {{letterClosing}},</p>
-
-    <p>{{from}}</p>
-    <p>{{sentDate}}</p>
+    <p><span>{{from}}{{sentDate}}</span></p>
   </div>
   <div>
     <div>
