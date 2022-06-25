@@ -37,7 +37,7 @@ const letterGreeting = ref('Dear');
     </div>
     <div>
       <label for="message">本文</label>
-      <input id="message" type="text" v-model="message">
+      <textarea id="message" type="text" v-model="message"></textarea>
     </div>
     <div>
       <label for="letter_greeting">頭語</label>
