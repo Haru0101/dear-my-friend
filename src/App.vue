@@ -7,15 +7,16 @@ const message = 'The accounting department has recently informed me that your sa
 const to = 'Simon';
 const from = 'MarkBorthwick';
 const sentDate = 'February 8, 8:59 A.M.';
-
+const letterClosing = 'Regards';
+const letterGreeting = 'Dear';
 </script>
 
 <template>
-  <p>Dear {{to}},</p>
+  <p>{{letterGreeting}} {{to}},</p>
 
   <p>{{message}}
 
-  Regards,</p>
+  {{letterClosing}},</p>
 
   <p>{{from}}</p>
   <p>{{sentDate}}</p>
