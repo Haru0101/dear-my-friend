@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const message = ref('The accounting department has recently informed me that your sales reports have consistently been submitted after the deadlines. Please respond to this email with reasons as to why you have failed to meet the deadlines.');
+const message = ref('How are you doing? Sorry it took me too long to long to write back. How has summer been? What have you been doing during the summer? On my part, I have been traveling around the country with my family. I made new friends and new memories. I miss you. I cannot wait to go back to school and see you again. I also want to tell you about all my travel experiences when we are back in school. I will send you some of my pictures. I hope all is well with you. Send your family my love. See you soon.');
 
 const to = ref('Simon');
 const from = ref('MarkBorthwick');
