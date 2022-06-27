@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const message = ref('How are you doing? Sorry it took me too long to long to write back. How has summer been? What have you been doing during the summer? On my part, I have been traveling around the country with my family. I made new friends and new memories. I miss you. I cannot wait to go back to school and see you again. I also want to tell you about all my travel experiences when we are back in school. I will send you some of my pictures. I hope all is well with you. Send your family my love. See you soon.');
+const message = ref('How are you doing? Sorry it took me too long to long to write back. How has summer been? What have you been doing during the summer? On my part, I have been traveling around the country with my family. I made new friends and new memories.\n\nI miss you. I cannot wait to go back to school and see you again. I also want to tell you about all my travel experiences when we are back in school. I will send you some of my pictures.\n\nI hope all is well with you. Send your family my love. See you soon.');
 
 const to = ref('Simon');
 const from = ref('MarkBorthwick');
@@ -21,7 +21,7 @@ const letterGreeting = ref('Dear');
     <div class="mb-8 bg-white shadow-lg rounded px-8 pt-6 pb-8">
       <p class="mb-6">{{letterGreeting}} {{to}},</p>
 
-      <p class="mb-2">{{message}}</p>
+      <p class="mb-2 whitespace-pre-wrap">{{message}}</p>
       <p class="mb-6">{{letterClosing}},</p>
 
       <p class="flex justify-between"><span>{{from}}</span><span>{{sentDate}}</span></p>
