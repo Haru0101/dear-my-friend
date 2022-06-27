@@ -14,17 +14,30 @@ const sentDate = ref(`${month} ${date}`);
 const letterClosing = ref('Regards');
 const letterGreeting = ref('Dear');
 
+const download = () => {
+  html2canvas(document.querySelector("#canvas-box")).then(canvas => { 
+      let downloadEle = document.createElement("a");
+      downloadEle.href = canvas.toDataURL("image/png");
+      downloadEle.download = "letter.png";
+      downloadEle.click();
+  });
+}
 </script>
-
 <template>
   <div class="max-w-2xl mx-auto">
-    <div class="mb-8 bg-white shadow-lg rounded px-8 pt-6 pb-8">
+    <div id="canvas-box" class="mb-8 bg-white shadow-lg rounded px-8 pt-6 pb-8">
       <p class="mb-6">{{letterGreeting}} {{to}},</p>
 
       <p class="mb-2 whitespace-pre-wrap">{{message}}</p>
       <p class="mb-6">{{letterClosing}},</p>
 
       <p class="flex justify-between"><span>{{from}}</span><span>{{sentDate}}</span></p>
+    </div>
+    <div class="text-center mb-8">
+      <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" @click="download">
+        <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+        <span>Download</span>
+      </button>
     </div>
     <div>
       <div class="mb-4">
