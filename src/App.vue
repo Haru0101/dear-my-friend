@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import html2canvas from 'html2canvas'
+import LetterPreview from './components/LetterPreview.vue';
 
 const message = ref('How are you doing? Sorry it took me too long to long to write back. How has summer been? What have you been doing during the summer? On my part, I have been traveling around the country with my family. I made new friends and new memories.\n\nI miss you. I cannot wait to go back to school and see you again. I also want to tell you about all my travel experiences when we are back in school. I will send you some of my pictures.\n\nI hope all is well with you. Send your family my love. See you soon.');
 
@@ -28,14 +29,14 @@ const download = () => {
 <template>
   <div class="p-6">
     <div class="w-full mx-auto max-w-screen-2xl">
-      <div id="canvas-box" class="mb-8 bg-white shadow-lg rounded px-8 pt-6 pb-8">
-        <p class="mb-6">{{letterGreeting}} {{to}},</p>
-
-        <p class="mb-2 whitespace-pre-wrap">{{message}}</p>
-        <p class="mb-6">{{letterClosing}},</p>
-
-        <p class="flex justify-between"><span>{{from}}</span><span>{{sentDate}}</span></p>
-      </div>
+      <LetterPreview
+        :to="to"
+        :from="from"
+        :sentDate="sentDate"
+        :message="message"
+        :letterGreeting="letterGreeting"
+        :letterClosing="letterClosing"
+      ></LetterPreview>
       <div class="text-center mb-8">
         <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" @click="download">
           <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
