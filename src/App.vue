@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import html2canvas from 'html2canvas'
 
 const message = ref('How are you doing? Sorry it took me too long to long to write back. How has summer been? What have you been doing during the summer? On my part, I have been traveling around the country with my family. I made new friends and new memories.\n\nI miss you. I cannot wait to go back to school and see you again. I also want to tell you about all my travel experiences when we are back in school. I will send you some of my pictures.\n\nI hope all is well with you. Send your family my love. See you soon.');
 
@@ -15,11 +16,12 @@ const letterClosing = ref('Regards');
 const letterGreeting = ref('Dear');
 
 const download = () => {
-  html2canvas(document.querySelector("#canvas-box")).then(canvas => { 
-      let downloadEle = document.createElement("a");
-      downloadEle.href = canvas.toDataURL("image/png");
-      downloadEle.download = "letter.png";
-      downloadEle.click();
+  // @ts-ignore
+  html2canvas(document.querySelector("#canvas-box")).then((canvas: { toDataURL: (arg0: string) => string; }) => {
+    let downloadEle = document.createElement("a");
+    downloadEle.href = canvas.toDataURL("image/png");
+    downloadEle.download = "letter.png";
+    downloadEle.click();
   });
 }
 </script>
