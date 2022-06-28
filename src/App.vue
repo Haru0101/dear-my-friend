@@ -26,7 +26,7 @@ const download = () => {
 }
 </script>
 <template>
-  <div class="p-8">
+  <div class="p-6">
     <div class="w-full mx-auto max-w-screen-2xl">
       <div id="canvas-box" class="mb-8 bg-white shadow-lg rounded px-8 pt-6 pb-8">
         <p class="mb-6">{{letterGreeting}} {{to}},</p>
