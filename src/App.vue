@@ -24,45 +24,47 @@ const download = () => {
 }
 </script>
 <template>
-  <div class="max-w-2xl mx-auto">
-    <div id="canvas-box" class="mb-8 bg-white shadow-lg rounded px-8 pt-6 pb-8">
-      <p class="mb-6">{{letterGreeting}} {{to}},</p>
+  <div class="p-8">
+    <div class="w-full mx-auto max-w-screen-2xl">
+      <div id="canvas-box" class="mb-8 bg-white shadow-lg rounded px-8 pt-6 pb-8">
+        <p class="mb-6">{{letterGreeting}} {{to}},</p>
 
-      <p class="mb-2 whitespace-pre-wrap">{{message}}</p>
-      <p class="mb-6">{{letterClosing}},</p>
+        <p class="mb-2 whitespace-pre-wrap">{{message}}</p>
+        <p class="mb-6">{{letterClosing}},</p>
 
-      <p class="flex justify-between"><span>{{from}}</span><span>{{sentDate}}</span></p>
-    </div>
-    <div class="text-center mb-8">
-      <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" @click="download">
-        <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
-        <span>Download</span>
-      </button>
-    </div>
-    <div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" label for="to">宛先</label>
-        <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="to" type="text" v-model="to">
+        <p class="flex justify-between"><span>{{from}}</span><span>{{sentDate}}</span></p>
       </div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="from">送り主</label>
-        <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="from" type="text" v-model="from">
+      <div class="text-center mb-8">
+        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" @click="download">
+          <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+          <span>Download</span>
+        </button>
       </div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="sent_date">送付時刻</label>
-        <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sent_date" type="text" v-model="sentDate">
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">本文</label>
-        <textarea rows="6" class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" type="text" v-model="message"></textarea>
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="letter_greeting">頭語</label>
-        <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="letter_greeting" type="text" v-model="letterGreeting">
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="letter_closing">結語</label>
-        <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="letter_closing" type="text" v-model="letterClosing">
+      <div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" label for="to">宛先</label>
+          <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="to" type="text" v-model="to">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="from">送り主</label>
+          <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="from" type="text" v-model="from">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="sent_date">送付時刻</label>
+          <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sent_date" type="text" v-model="sentDate">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="message">本文</label>
+          <textarea rows="6" class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" type="text" v-model="message"></textarea>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="letter_greeting">頭語</label>
+          <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="letter_greeting" type="text" v-model="letterGreeting">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="letter_closing">結語</label>
+          <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="letter_closing" type="text" v-model="letterClosing">
+        </div>
       </div>
     </div>
   </div>
