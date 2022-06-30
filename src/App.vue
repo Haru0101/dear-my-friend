@@ -29,6 +29,10 @@ const download = () => {
 <template>
   <div class="p-6">
     <div class="w-full mx-auto max-w-screen-2xl">
+      <div class="flex justify-end">
+        <label class="mr-4"><input class="mr-1" type="radio" name="languages">日本語</label>
+        <label><input class="mr-1" type="radio" name="languages">English</label>
+      </div>
       <LetterPreview
         :to="to"
         :from="from"
