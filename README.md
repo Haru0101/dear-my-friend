@@ -1,5 +1,5 @@
 <div align="center">
-    <img alt="Dear My Friendのロゴ" src="./public/logo.png"></img>
+    <img alt="Dear My Friendのロゴ" width="80%" src="./public/logo.png"></img>
 </div>
 # Vue 3 + TypeScript + Vite
 
