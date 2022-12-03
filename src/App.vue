@@ -13,9 +13,10 @@ const monthsIndex: number = today.getMonth();
 const month: string = monthsFullSpell[monthsIndex];
 const date: number = today.getDate();
 const sentDate = ref<string>(`${month} ${date}`);
+const letterGreeting = ref<string>('Dear');
+const letterGreetingPosition = ref<string>('side')
 const letterClosing = ref<string>('Regards,');
 const letterClosingPosition = ref<string>('left');
-const letterGreeting = ref<string>('Dear');
 
 const download = () => {
   // @ts-ignore
@@ -36,6 +37,7 @@ const download = () => {
         :sentDate="sentDate"
         :message="message"
         :letterGreeting="letterGreeting"
+        :letterGreetingPosition="letterGreetingPosition"
         :letterClosing="letterClosing"
         :letterClosingPosition="letterClosingPosition"
       ></LetterPreview>
@@ -53,6 +55,10 @@ const download = () => {
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" label for="to">宛先</label>
           <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="to" type="text" v-model="to">
+          <div class="mt-2 pl-1 flex align-center">
+            <input v-model="letterGreetingPosition" value="side" type="radio" name="letterGreetingPosition" id="side" class="inline-block mr-1"><label for="side" class="text-sm">宛名の横</label>
+            <input v-model="letterGreetingPosition" value="below" type="radio" name="letterGreetingPosition" id="below" class="inline-block mr-1 ml-2"><label for="below" class="text-sm">宛名の下</label>
+          </div>
         </div>
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="message">本文</label>
