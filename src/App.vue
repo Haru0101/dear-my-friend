@@ -14,6 +14,7 @@ const month: string = monthsFullSpell[monthsIndex];
 const date: number = today.getDate();
 const sentDate = ref<string>(`${month} ${date}`);
 const letterClosing = ref<string>('Regards,');
+const letterClosingPosition = ref<string>('left');
 const letterGreeting = ref<string>('Dear');
 
 const download = () => {
@@ -36,6 +37,7 @@ const download = () => {
         :message="message"
         :letterGreeting="letterGreeting"
         :letterClosing="letterClosing"
+        :letterClosingPosition="letterClosingPosition"
       ></LetterPreview>
       <div class="text-center mb-8">
         <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" @click="download">
@@ -59,6 +61,10 @@ const download = () => {
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="letter_closing">結語</label>
           <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="letter_closing" type="text" v-model="letterClosing">
+          <div class="mt-2 pl-1 flex align-center">
+            <input v-model="letterClosingPosition" value="left" type="radio" name="letterClosingPosition" id="left" class="inline-block mr-1"><label for="left" class="text-sm">左寄せ</label>
+            <input v-model="letterClosingPosition" value="right" type="radio" name="letterClosingPosition" id="right" class="inline-block mr-1 ml-2"><label for="right" class="text-sm">右寄せ</label>
+          </div>
         </div>
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="from">送り主</label>
