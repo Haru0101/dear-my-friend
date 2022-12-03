@@ -13,10 +13,11 @@ const monthsIndex: number = today.getMonth();
 const month: string = monthsFullSpell[monthsIndex];
 const date: number = today.getDate();
 const sentDate = ref<string>(`${month} ${date}`);
+const sentDatePosition = ref<string>('below')
 const letterGreeting = ref<string>('Dear');
-const letterGreetingPosition = ref<string>('side')
+const letterGreetingPosition = ref<string>('below')
 const letterClosing = ref<string>('Regards,');
-const letterClosingPosition = ref<string>('left');
+const letterClosingPosition = ref<string>('right');
 
 const download = () => {
   // @ts-ignore
@@ -35,6 +36,7 @@ const download = () => {
         :to="to"
         :from="from"
         :sentDate="sentDate"
+        :sentDatePosition="sentDatePosition"
         :message="message"
         :letterGreeting="letterGreeting"
         :letterGreetingPosition="letterGreetingPosition"
@@ -51,14 +53,14 @@ const download = () => {
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" label for="to">頭語</label>
           <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="to" type="text" v-model="letterGreeting">
+          <div class="mt-2 pl-1 flex align-center">
+            <input v-model="letterGreetingPosition" value="below" type="radio" name="letterGreetingPosition" id="below" class="inline-block mr-1"><label for="below" class="text-sm">宛名の下</label>
+            <input v-model="letterGreetingPosition" value="side" type="radio" name="letterGreetingPosition" id="side" class="inline-block mr-1 ml-2"><label for="side" class="text-sm">宛名の横</label>
+          </div>
         </div>
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" label for="to">宛先</label>
           <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="to" type="text" v-model="to">
-          <div class="mt-2 pl-1 flex align-center">
-            <input v-model="letterGreetingPosition" value="side" type="radio" name="letterGreetingPosition" id="side" class="inline-block mr-1"><label for="side" class="text-sm">宛名の横</label>
-            <input v-model="letterGreetingPosition" value="below" type="radio" name="letterGreetingPosition" id="below" class="inline-block mr-1 ml-2"><label for="below" class="text-sm">宛名の下</label>
-          </div>
         </div>
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="message">本文</label>
@@ -68,8 +70,8 @@ const download = () => {
           <label class="block text-gray-700 text-sm font-bold mb-2" for="letter_closing">結語</label>
           <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="letter_closing" type="text" v-model="letterClosing">
           <div class="mt-2 pl-1 flex align-center">
-            <input v-model="letterClosingPosition" value="left" type="radio" name="letterClosingPosition" id="left" class="inline-block mr-1"><label for="left" class="text-sm">左寄せ</label>
-            <input v-model="letterClosingPosition" value="right" type="radio" name="letterClosingPosition" id="right" class="inline-block mr-1 ml-2"><label for="right" class="text-sm">右寄せ</label>
+            <input v-model="letterClosingPosition" value="right" type="radio" name="letterClosingPosition" id="right" class="inline-block mr-1"><label for="right" class="text-sm">右寄せ</label>
+            <input v-model="letterClosingPosition" value="left" type="radio" name="letterClosingPosition" id="left" class="inline-block mr-1 ml-2"><label for="left" class="text-sm">左寄せ</label>
           </div>
         </div>
         <div class="mb-4">
@@ -79,6 +81,10 @@ const download = () => {
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="sent_date">送付時刻</label>
           <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="sent_date" type="text" v-model="sentDate">
+          <div class="mt-2 pl-1 flex align-center">
+            <input v-model="sentDatePosition" value="below" type="radio" name="sentDatePosition" id="below" class="inline-block mr-1"><label for="below" class="text-sm">下部</label>
+            <input v-model="sentDatePosition" value="above" type="radio" name="sentDatePosition" id="above" class="inline-block mr-1 ml-2"><label for="above" class="text-sm">上部</label>
+          </div>
         </div>
       </div>
     </div>
