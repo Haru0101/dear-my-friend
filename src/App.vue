@@ -16,8 +16,6 @@ const sentDate = ref<string>(`${month} ${date}`);
 const letterClosing = ref<string>('Regards');
 const letterGreeting = ref<string>('Dear');
 
-const language = ref<'jp' | 'en'>('jp');
-
 const download = () => {
   // @ts-ignore
   html2canvas(document.querySelector("#canvas-box")).then((canvas: { toDataURL: (arg0: string) => string; }) => {
@@ -31,10 +29,6 @@ const download = () => {
 <template>
   <div class="p-6">
     <div class="w-full mx-auto max-w-3xl">
-      <div class="flex justify-end">
-        <label class="mr-4"><input v-model="language" value="jp" class="mr-1" type="radio" name="languages">日本語</label>
-        <label><input v-model="language" value="en" class="mr-1" type="radio" name="languages">English</label>
-      </div>
       <LetterPreview
         :to="to"
         :from="from"
