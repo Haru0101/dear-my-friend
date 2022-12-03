@@ -45,6 +45,10 @@ const download = () => {
       </div>
       <div>
         <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" label for="to">挨拶語</label>
+          <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="to" type="text" v-model="letterGreeting">
+        </div>
+        <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" label for="to">宛先</label>
           <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="to" type="text" v-model="to">
         </div>
