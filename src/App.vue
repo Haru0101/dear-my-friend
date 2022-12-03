@@ -45,7 +45,7 @@ const download = () => {
       </div>
       <div>
         <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" label for="to">挨拶語</label>
+          <label class="block text-gray-700 text-sm font-bold mb-2" label for="to">頭語</label>
           <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="to" type="text" v-model="letterGreeting">
         </div>
         <div class="mb-4">
@@ -63,10 +63,6 @@ const download = () => {
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="message">本文</label>
           <textarea rows="6" class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" type="text" v-model="message"></textarea>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="letter_greeting">頭語</label>
-          <input class="block shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="letter_greeting" type="text" v-model="letterGreeting">
         </div>
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="letter_closing">結語</label>
