@@ -3,20 +3,19 @@ import { ref } from 'vue'
 import html2canvas from 'html2canvas'
 import LetterPreview from './components/LetterPreview.vue';
 
-const message = ref('How are you doing? Sorry it took me too long to long to write back. How has summer been? What have you been doing during the summer? On my part, I have been traveling around the country with my family. I made new friends and new memories.\n\nI miss you. I cannot wait to go back to school and see you again. I also want to tell you about all my travel experiences when we are back in school. I will send you some of my pictures.\n\nI hope all is well with you. Send your family my love. See you soon.');
+const message = ref('凛とした冷たい空気に、風花美しく輝くこの頃、佐藤様にはご清祥のことと存じます。\n\nさて、先日は素敵なお花をありがとうございました。おかげさまでとても思い出に残る誕生日となりました。大変お忙しいとは思いますが、お仕事が落ち着きましたらまたぜひお食事に行きましょう。\n\n季節の変わり目で体調を崩しやすい季節ですので、どうかご自愛ください。');
 
-const to = ref<string>('Simon,');
-const from = ref<string>('Michael');
+const to = ref<string>('佐藤様');
+const from = ref<string>('高橋 太郎');
 const today: Date = new Date(Date.now());
-const monthsFullSpell: string[] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const monthsIndex: number = today.getMonth();
-const month: string = monthsFullSpell[monthsIndex];
+const year: number = today.getFullYear();
+const month: number = today.getMonth() + 1;
 const date: number = today.getDate();
-const sentDate = ref<string>(`${month} ${date}`);
+const sentDate = ref<string>(`${year}年${month}月${date}日`);
 const sentDatePosition = ref<string>('below')
-const letterGreeting = ref<string>('Dear');
+const letterGreeting = ref<string>('拝啓');
 const letterGreetingPosition = ref<string>('below')
-const letterClosing = ref<string>('Regards,');
+const letterClosing = ref<string>('敬具');
 const letterClosingPosition = ref<string>('right');
 
 const download = () => {
