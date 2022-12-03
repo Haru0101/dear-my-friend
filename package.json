@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d build/public"
+    "deploy": "npm run build && gh-pages -d public"
   },
   "dependencies": {
     "gh-pages": "^4.0.0",
