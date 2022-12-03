@@ -30,7 +30,7 @@ const download = () => {
 </script>
 <template>
   <div class="p-6">
-    <div class="w-full mx-auto max-w-screen-2xl">
+    <div class="w-full mx-auto max-w-3xl">
       <div class="flex justify-end">
         <label class="mr-4"><input v-model="language" value="jp" class="mr-1" type="radio" name="languages">日本語</label>
         <label><input v-model="language" value="en" class="mr-1" type="radio" name="languages">English</label>
