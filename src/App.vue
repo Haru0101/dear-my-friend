@@ -5,7 +5,7 @@ import LetterPreview from './components/LetterPreview.vue';
 
 const message = ref('How are you doing? Sorry it took me too long to long to write back. How has summer been? What have you been doing during the summer? On my part, I have been traveling around the country with my family. I made new friends and new memories.\n\nI miss you. I cannot wait to go back to school and see you again. I also want to tell you about all my travel experiences when we are back in school. I will send you some of my pictures.\n\nI hope all is well with you. Send your family my love. See you soon.');
 
-const to = ref<string>('Simon');
+const to = ref<string>('Simon,');
 const from = ref<string>('Michael');
 const today: Date = new Date(Date.now());
 const monthsFullSpell: string[] = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -13,7 +13,7 @@ const monthsIndex: number = today.getMonth();
 const month: string = monthsFullSpell[monthsIndex];
 const date: number = today.getDate();
 const sentDate = ref<string>(`${month} ${date}`);
-const letterClosing = ref<string>('Regards');
+const letterClosing = ref<string>('Regards,');
 const letterGreeting = ref<string>('Dear');
 
 const download = () => {
